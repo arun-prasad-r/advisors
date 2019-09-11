@@ -7,7 +7,6 @@ export default Route.extend({
     actions: {
         refreshAdvisors() {
             this.refresh();
-            console.log('refreshed model');
         }
     }
 });

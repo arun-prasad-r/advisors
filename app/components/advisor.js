@@ -10,7 +10,7 @@ export default Component.extend({
         toggleCallAvailability() {
             const advisor = this.advisor;
             advisor.toggleProperty('callAvailability');
-            advisor.save().then(savedAdvisor => {
+            advisor.save().then((/*savedAdvisor*/) => {
                 // eslint-disable-next-line no-console
                 console.log(`Call status set to ${advisor.callAvailability} for ${advisor.name}!`);
             })
@@ -18,7 +18,7 @@ export default Component.extend({
         toggleChatAvailability() {
             const advisor = this.advisor;
             advisor.toggleProperty('chatAvailability');
-            advisor.save().then(savedAdvisor => {
+            advisor.save().then((/*savedAdvisor*/) => {
                 // eslint-disable-next-line no-console
                 console.log(`Chat status set to ${advisor.chatAvailability} for ${advisor.name}!`);
             })
