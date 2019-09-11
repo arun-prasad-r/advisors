@@ -1,5 +1,7 @@
 body {
 	background: teal;
+	background: -webkit-linear-gradient(to left, teal, #8360c3);
+	background: linear-gradient(to left, teal, #8360c3);
 }
 .main.container {
 	margin-top: 0.75em;
@@ -39,9 +41,9 @@ body {
 	padding: 10px;
 }
 .advisor:hover {
-	background: #00808024;
+	background: rgba(0, 128, 128, 0.14);
 	border-radius: 5px;
-	border: 3px solid #008080ab;
+	border: 3px solid rgba(0, 128, 128, 0.67);
 }
 .left_advisor_info.column {
 	text-align: left;
@@ -80,12 +82,15 @@ body {
 	margin-bottom: 0.5em;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 320px),
+	only screen and (max-width: 375px),
+	only screen and (max-width: 425px) {
 	.left_advisor_info.column {
 		text-align: center;
 	}
 	.advisor_avatar.image {
 		margin-right: 0;
+		margin-bottom: 0.5em;
 	}
 	.advisor .advisor_name {
 		display: block;
