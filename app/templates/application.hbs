@@ -1,5 +1,21 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="ui main container">
+    <div class="ui menu">
+        {{#link-to 'index' class="image item"}}
+            <img alt="Advisors Logo" src="/assets/images/logo.png">
+        {{/link-to}}
+        {{#link-to 'advisors' class="item"}}Find Advisors{{/link-to}}
+        {{#link-to 'about' class="item"}}About{{/link-to}}
+        {{!-- <LinkTo @route="advisors" @class="item">Find Advisors</LinkTo> --}}
+        {{!-- <LinkTo @route="about" @class="item">About Us</LinkTo> --}}
+    </div>
+    <div class="ui grid">
+        <div class="ui sixteen wide column">
+            <div class="ui large header">
+                <div class="ui center aligned fluid padded master_outlet_container segment">
+                    {{outlet}}
+                </div>
+            </div>
+        </div>
+        <div class="ui center aligned sixteen wide column">&copy; 2019 Advisors Inc.</div>
+    </div>
+</div>

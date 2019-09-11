@@ -1,0 +1,39 @@
+<div class="ui basic segment">
+    <div class="ui two column stackable grid">
+        <div class="ui thirteen wide computer eleven wide tablet sixteen wide mobile left_advisor_info column">
+            {{!-- <img alt={{advisor.name}} src={{advisor.avatar}} class="ui left floated small avatar image">
+            <span class="advisor_name">{{advisor.name}}</span>
+            <small class="silver text">{{advisor.bio}}</small> --}}
+            <h3 class="ui header">
+                <img alt={{advisor.name}} src={{advisor.avatar}} class="ui advisor_avatar grow image">
+                <div class="content">
+                    <span class="advisor_name">{{advisor.name}}</span>
+                    <div class="sub header">{{advisor.bio}}</div>
+                </div>
+            </h3>
+        </div>
+        <div class="ui three wide computer five wide tablet sixteen wide mobile column">
+            <span class="price_per_minute">${{advisor.pricePerMinute}}/min</span>
+            <br>
+            <a class="ui {{if advisor.callAvailability 'teal' 'grey disabled'}} fluid call_now button" href="tel:{{advisor.phone}}">
+                <i class="ui phone icon"></i> Call Now
+            </a>
+            <a class="ui {{if advisor.chatAvailability 'teal' 'grey disabled'}} fluid chat_now button" href="sms:{{advisor.phone}}">
+                <i class="ui chat icon"></i> Chat Now
+            </a>
+        </div>
+        {{#if adminModeEnabled}}
+            <div class="sixteen wide column">
+                <div class="ui basic small buttons">
+                    <div class="ui disabled button">Toggle Status</div>
+                    <button class="ui call_now icon button" {{action 'toggleCallAvailability'}}>
+                        <i class="ui {{if advisor.callAvailability 'teal' 'grey'}} phone icon"></i>
+                    </button>
+                    <button class="ui chat_now icon button" {{action 'toggleChatAvailability'}}>
+                        <i class="ui {{if advisor.chatAvailability 'teal' 'grey'}} chat icon"></i>
+                    </button>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>

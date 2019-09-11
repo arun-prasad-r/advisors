@@ -1,0 +1,16 @@
+<div class="ui segments">
+    <div class="ui secondary segment">These advisors are here to help you</div>
+    {{#each model as |advisor|}}
+        <div class="ui segment">
+            <Advisor @advisor={{advisor}} @adminModeEnabled={{adminMode}}/>
+        </div>
+    {{else}}
+        <div class="ui secondary segment">
+            Sorry! No advisors available!
+        </div>
+    {{/each}}
+    {{!-- For debugging only --}}
+</div>
+<a href="https://5d78b1efa8c27100149863e2.mockapi.io/api/advisors" class="ui mini black button" rel="noopener" target="_blank">View Advisors JSON</a>
+<button class="ui mini black button" {{action 'toggleAdminMode'}}>Toggle Admin Mode for Advisors</button>
+<button class="ui mini black button" {{action 'refreshAdvisors'}}>Refresh Advisors</button>
